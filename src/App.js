@@ -26,7 +26,7 @@ function getMovie()
   })
 }
 useEffect((title)=>{
-  let url=`https://www.omdbapi.com/?t=${title}&apikey=d063ebe8`;
+  let url=`https://www.omdbapi.com/?t=thor&apikey=d063ebe8`;
   fetch(url)
   .then((Response)=>Response.json())
   .then((movie)=>
