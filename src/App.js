@@ -1,7 +1,5 @@
 import './App.css';
-// d063ebe8
-//https://www.omdbapi.com/t=sershah&apikey=d063ebe8
-import {useState} from 'react';
+import {useState,useEffect} from 'react';
 
 
 
@@ -27,7 +25,7 @@ function getMovie()
     console.log(err);
   })
 }
-useEffect(()=>{
+useEffect((title)=>{
   let url=`https://www.omdbapi.com/?t=${title}&apikey=d063ebe8`;
   fetch(url)
   .then((Response)=>Response.json())
