@@ -1,7 +1,7 @@
 import './App.css';
 // d063ebe8
 //https://www.omdbapi.com/t=sershah&apikey=d063ebe8
-import {useState,useEffect} from 'react';
+import {useState} from 'react';
 
 
 
@@ -10,9 +10,9 @@ function App() {
   let [movieInfo,changeMovieInfo]=useState(null);
   let [title,changeTitle]=useState("the avengers");
 
-function readTitle(title)
+function readTitle(value)
 {
-  changeTitle(title);
+  changeTitle(value);
 }
 function getMovie()
 {
@@ -27,18 +27,18 @@ function getMovie()
     console.log(err);
   })
 }
-useEffect(()=>{
-  let url=`https://www.omdbapi.com/?t=${title}&apikey=d063ebe8`;
-  fetch(url)
-  .then((Response)=>Response.json())
-  .then((movie)=>
-  {
-    changeMovieInfo(movie);
-  })
-  .catch((err)=>{
-    console.log(err);
-  })
-},[])
+// useEffect(()=>{
+//   let url=`https://www.omdbapi.com/?t=${title}&apikey=d063ebe8`;
+//   fetch(url)
+//   .then((Response)=>Response.json())
+//   .then((movie)=>
+//   {
+//     changeMovieInfo(movie);
+//   })
+//   .catch((err)=>{
+//     console.log(err);
+//   })
+// },[])
   return (
     <div className="App">
       <div className="container">
