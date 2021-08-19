@@ -27,18 +27,18 @@ function getMovie()
     console.log(err);
   })
 }
-// useEffect(()=>{
-//   let url=`https://www.omdbapi.com/?t=${title}&apikey=d063ebe8`;
-//   fetch(url)
-//   .then((Response)=>Response.json())
-//   .then((movie)=>
-//   {
-//     changeMovieInfo(movie);
-//   })
-//   .catch((err)=>{
-//     console.log(err);
-//   })
-// },[])
+useEffect(()=>{
+  let url=`https://www.omdbapi.com/?t=${title}&apikey=d063ebe8`;
+  fetch(url)
+  .then((Response)=>Response.json())
+  .then((movie)=>
+  {
+    changeMovieInfo(movie);
+  })
+  .catch((err)=>{
+    console.log(err);
+  })
+},[])
   return (
     <div className="App">
       <div className="container">
